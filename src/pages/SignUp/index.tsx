@@ -13,11 +13,11 @@ function Index() {
   const navigation = useNavigate();
   const { OnSignUp } = useSignUp();
 
-  const { signup } = useSelector((state: RootState) => state.auth);
-
+  const { auth } = useSelector((state: RootState) => state.auth);
+console.log(auth,"auth.......................................");
   useEffect(() => {
-    if (signup?.success) navigation(DASHBOARD);
-  }, [signup?.success]);
+    if (auth?.success) navigation(DASHBOARD);
+  }, [auth?.success]);
 
   useEffect(() => {
     localStorage.clear();
